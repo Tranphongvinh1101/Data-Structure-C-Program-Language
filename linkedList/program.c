@@ -52,10 +52,21 @@ void printList(Node* head){
     }
 }
 
+Node* append(Node* head, int data){
+    Node* newNode = createNode(data);
+    Node* temp = head;
+    while(temp->next != NULL){
+        temp = temp->next;
+    }
+    temp->next = newNode;
+    return head;
+}
+
 int main(){
     int n;
     printf("How many nodes?: ");
     scanf("%d", &n);
     Node* list = createLinkedList(n);
+    append(list, 1331);
     printList(list);
 }
